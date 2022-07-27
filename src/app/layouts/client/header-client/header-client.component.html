@@ -1,0 +1,51 @@
+<div class="row bg-dark p-2">
+    <div class="col-6">
+        <div class="row p-0">
+            <div class="col-3 p-2">
+                <a routerLink="" class="text-warning tw-font-bold tw-text-2xl tw-block ms-3"> <i
+                        class="fa-solid fa-shop me-1"></i>POLY SHOP</a>
+            </div>
+            <div class="col-9">
+                <div class="tw-flex tw-bg-white p-1 my-2 tw-rounded-lg tw-shadow-2xl">
+                    <i class="fa-solid fa-magnifying-glass m-1"></i>
+                    <input type="text" class="tw-outline-white tw-h-full tw-w-full tw-rounded-lg p-1"
+                        placeholder="Bạn muốn tìm gì ?">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="row p-0">
+            <div class="col-4 text-center">
+                <a href="" class="ms-1 hover:tw-text-white text-warning">
+                    <i class="fa-solid fa-phone tw-text-2xl text-light"></i><br>
+                    <span class="tw-font-bold">Gọi mua hàng 1800.2097</span></a>
+            </div>
+            <div class="col-4 text-center">
+                <a href="" class="ms-1 hover:tw-text-white text-warning">
+                    <i class="fa-solid fa-location-dot tw-text-2xl  text-light"></i><br>
+                    <span class="tw-font-bold">Chương Mỹ, Hà Tây</span></a>
+            </div>
+            <div class="col-4 text-center">
+                <a href="" class="ms-1 hover:tw-text-white text-warning">
+                    <i class="fa-solid fa-truck-fast tw-text-2xl mt-1 text-light"></i><br>
+                    <span class="tw-font-bold">Giao hàng mọi nơi</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-2 pt-1">
+        <button (click)="router.navigate(['/login'])" *ngIf="!isLoggedIn" class="btn text-light"><i
+                class="fa-solid fa-user me-2"></i>Đăng nhập</button>
+        <div *ngIf="isLoggedIn" class="text-light tw-flex pt-2">
+            <button id="dropdownMenuButton1" data-bs-toggle="dropdown"
+            aria-expanded="false"><img [src]="logginInUser.avatar" alt=""  class="tw-w-8 tw-rounded-full me-2
+                "></button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><button class="dropdown-item" (click)="logout()">Đăng xuất</button></li>
+            </ul>
+            <span class="mt-2"> {{logginInUser.name}}</span>
+            <a class="tw-mx-4 mt-1 fs-4 tw-scale-75 hover:tw-text-white hover:tw-scale-100 tw-transition tw-duration-150 tw-ease-out md:tw-ease-in"  
+               ><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+    </div>
+</div>
